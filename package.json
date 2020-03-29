@@ -1,0 +1,33 @@
+{
+  "name": "ganymede",
+  "version": "1.0.0",
+  "description": "A content-focused, deploy-ready theme for Ghost.",
+  "main": "index.js",
+  "engines": {
+    "ghost-api": "v3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme",
+    "ganymede"
+  ],
+  "author": {
+    "name": "Mingjie Jiang",
+    "email": "jiang@mingjie.info",
+    "url": "http://mingjie.info"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal"
+    ]
+  },
+  "license": "MIT",
+  "config": {
+    "posts_per_page": 10
+  }
+}
