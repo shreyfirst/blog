@@ -73,11 +73,66 @@ iframe {
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
+:root {
+  --link-color: rgba(0, 0, 0, .84);
+  --link-color-dimmed: rgba(0, 0, 0, .4);
+  --text-color: rgba(0, 0, 0, .8);
+  --hint-color: #8a8e99;
+  --background-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --block-background-color: rgba(0, 0, 0, 0.05);
+  --ext-icon: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==');
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --link-color: rgba(255, 255, 255,.9);
+    --link-color-dimmed: rgba(255, 255, 255, .4);
+    --text-color: rgba(255, 255, 255, 1);
+    --hint-color: #8492a6;
+    --background-color: #121217;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --block-background-color: rgba(255, 255, 255, 0.05);
+    --ext-icon: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASUlEQVQoU5WQwQ4AIAhC4/8/2rJmQ5NDHuUNBhjizMxYwvMAEABrGwSJHeS/FkxOwGGqY4UiIYEKaqO7BO8gy3Cpf1CNfous+SZoSE/7IpEx6wAAAABJRU5ErkJggg==');
+  }
+}
+
+[data-user-color-scheme='dark'] {
+  --link-color: rgba(255, 255, 255,.9);
+  --link-color-dimmed: rgba(255, 255, 255, .4);
+  --text-color: rgba(255, 255, 255, 1);
+  --hint-color: #8492a6;
+  --background-color: #121217;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --block-background-color: rgba(255, 255, 255, 0.05);
+  --ext-icon: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASUlEQVQoU5WQwQ4AIAhC4/8/2rJmQ5NDHuUNBhjizMxYwvMAEABrGwSJHeS/FkxOwGGqY4UiIYEKaqO7BO8gy3Cpf1CNfous+SZoSE/7IpEx6wAAAABJRU5ErkJggg==');
+}
+
+.theme__toggle:hover {
+  opacity: 1;
+}
+
+.theme__toggle::after {
+  content: var(--toggle-icon);
+  border-bottom: none!important;
+  opacity: 1;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 a {
   text-decoration: none;
   transition: all .4s ease-in-out;
   /* color: #0080ff; */
-  color: rgba(0,0,0,.84);
+  color: var(--link-color);
 }
 
 audio,
@@ -178,13 +233,13 @@ hr {
   /* padding: 0; */
   height: 1px;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  border-top: 1px solid var(--hint-color);
 }
 
 body {
   font-size: 1.24rem;
   line-height: 1.54;
-  color: rgba(0,0,0,.8);
+  color: var(--text-color);
   text-rendering: optimizeLegibility;
 }
 
