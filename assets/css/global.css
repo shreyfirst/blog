@@ -82,8 +82,7 @@ iframe {
   --background-color: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --block-background-color: rgba(0, 0, 0, 0.05);
-  --toggle-icon: '🌙';
-}
+  }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -98,7 +97,6 @@ iframe {
     --background-color: #121217;
     --shadow-color: rgba(255, 255, 255, 0.1);
     --block-background-color: rgba(255, 255, 255, 0.05);
-    --toggle-icon: '🌞';
   }
 }
 
