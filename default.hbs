@@ -49,9 +49,8 @@
     </script>
 
     {{!-- External Link --}}
-    <script>
+    <script defer>
         var links = document.links;
-
         for (i = 0, linksLength = links.length; i < linksLength; i++) {
             if (links[i].hostname != window.location.hostname) {
                 links[i].target = '_blank';
@@ -65,6 +64,8 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}" defer></script>
     <script type="module" src="{{asset "built/instantpage.js"}}" defer></script>
+    
+    <script type="text/javascript" src="{{asset "built/darkmode.js"}}"></script>
 
     {{!-- Source: https://github.com/coreysnyder04/fluidbox-ghost-blog-plugin --}}
     <script type="text/javascript" src="{{asset "built/fluidbox.min.js"}}" defer></script>
