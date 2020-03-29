@@ -324,10 +324,17 @@ h6,
   /* box-shadow: #1c2437 0px -0.5px 0px inset; */
   /* color: var(--shadow-color) */
 
+<<<<<<< HEAD
   box-shadow: inset 0px -0.5px 0px var(--link-color-dimmed);
   -webkit-appearance: none;
   -webkit-box-shadow: inset 0px -1px 0px var(--link-color-dimmed);
   -moz-box-shadow: inset 0px -1px 0px var(--link-color-dimmed);
+=======
+  box-shadow: inset 0px -0.5px 0px var(--shadow-color);
+  -webkit-appearance: none;
+  -webkit-box-shadow: inset 0px -1px 0px var(--shadow-color);
+  -moz-box-shadow: inset 0px -1px 0px var(--shadow-color);
+>>>>>>> 6ef46df604ed0431605fac7cd962154086ad9d04
 }
 
 /* IMG */
@@ -743,4 +750,8 @@ figure .fluidbox--closed .fluidbox__ghost {
 figure .fluidbox__ghost {
   transition: opacity 0s 0s, transform 0.25s 0s, -webkit-transform 0.25s 0s;
   transition-timing-function: ease-in-out;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6ef46df604ed0431605fac7cd962154086ad9d04
