@@ -7,19 +7,22 @@ into the {body} of the default.hbs template --}}
 {{#post}}
 
 <main class="main_minimal" role="main">
+
+    <div class="post__pre">
+        
+        {{^has tag="#nodate"}}
+        <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{^is "post"}}Last Updated:
+            {{/is}}{{date}}</time>
+        {{/has}}
+        {{#if featured}}<span class="post__featured"> | ★ Featured</span>{{/if}}
+    </div>
+
     <article class="article__wrapper" role="article">
+
         <header>
             <h1 class="post__title">{{title}}</h1>
             {{!-- <time class="date" datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> --}}
         </header>
-
-        <div class="post__pre">
-            {{^has tag="#nodate"}}
-            <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{^is "post"}}Last Updated:
-                {{/is}}{{date}}</time>
-            {{/has}}
-            {{#if featured}}<span class="post__featured"> | ★ Featured</span>{{/if}}
-        </div>
 
         <section class="post__content-wrapper">
             <div class="post__content">
@@ -39,14 +42,16 @@ into the {body} of the default.hbs template --}}
             </div>
         </section>
 
-        <p class="footer__divider"><i>Fueled by curiosity.</i></p>
+        <p class="subscribe__divider">###</p>
 
         {{#is "post"}}
         {{#if tags}}
         <div class="post__tags">
-            {{tags separator=", "}}
+            Tags: {{tags separator=", "}}
         </div>
-        
+        <div class="post__permalink">
+            Permalink: <input value="{{url absolute='true'}}" onClick="this.setSelectionRange(0, this.value.length)" />
+        </div>
         {{/if}}
         {{/is}}
 
@@ -59,18 +64,15 @@ into the {body} of the default.hbs template --}}
     </article>
 
     {{!-- 
-
     {{#has tag="#subscribe"}}
         {{> subscribe}}
     {{/has}}
-
     --}}
 
     {{!-- {{#is "post"}}
     <nav class="post__footer" role="navigation">
         <div class="footer__wrapper">
             <div class="footer__wrapper-inner">
-
                 <div class="footer__link-prev">
                     {{#prev_post in="primary_tag"}}
                     <a class="footer__link-anchor" href="{{url}}" rel="prev">
@@ -82,7 +84,6 @@ into the {body} of the default.hbs template --}}
                     </a>
                     {{/prev_post}}
                 </div>
-
                 {{#next_post in="primary_tag"}}
                 <div class="footer__link-next">
                     <a class="footer__link-anchor" href="{{url}}" rel="next">
@@ -94,7 +95,6 @@ into the {body} of the default.hbs template --}}
                     </a>
                 </div>
                 {{/next_post}}
-
             </div>
         </div>
     </nav>
