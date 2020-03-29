@@ -47,8 +47,4 @@ toggle.addEventListener('click', evt => {
   applySetting(toggleSetting());
 });
 
-<<<<<<< HEAD
 applySetting();
-=======
-applySetting();
->>>>>>> 6ef46df604ed0431605fac7cd962154086ad9d04
