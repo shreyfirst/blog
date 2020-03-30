@@ -8,6 +8,7 @@ into the {body} of the default.hbs template --}}
 
 <main class="main_minimal" role="main">
 
+{{^has tag="#home"}}
     <div class="post__pre">
         
         {{^has tag="#nodate"}}
@@ -16,6 +17,7 @@ into the {body} of the default.hbs template --}}
         {{/has}}
         {{#if featured}}<span class="post__featured"> | ★ Featured</span>{{/if}}
     </div>
+ {{/has}}
 
     <article class="article__wrapper" role="article">
 
