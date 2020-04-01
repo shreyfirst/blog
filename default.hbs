@@ -51,10 +51,9 @@
     {{!-- External Link --}}
     <script defer>
         var links = document.links;
-        var append = "www" + window.location.hostname;
-
+        
         for (i = 0, linksLength = links.length; i < linksLength; i++) {
-            if (links[i].hostname != window.location.hostname OR links[i].hostname != append) {
+            if (links[i].hostname != window.location.hostname) {
                 links[i].target = '_blank';
                 links[i].rel = 'noopener';
             }
