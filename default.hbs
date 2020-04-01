@@ -53,7 +53,7 @@
         var links = document.links;
 
         for (i = 0, linksLength = links.length; i < linksLength; i++) {
-            if (links[i].hostname != ("www"+window.location.hostname || window.location.hostname) {
+            if (links[i].hostname != ("www."+window.location.hostname) || links[i].hostname != window.location.hostname) {
                 links[i].target = '_blank';
                 links[i].rel = 'noopener';
             }
