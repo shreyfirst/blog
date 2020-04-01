@@ -53,10 +53,11 @@
         var links = document.links;
         
         for (i = 0, linksLength = links.length; i < linksLength; i++) {
-            if (links[i].hostname != "shrey.blog") {
+            if (links[i].hostname != "shrey.blog" || links[i].hostname != "www.shrey.blog") {
                 links[i].target = '_blank';
                 links[i].rel = 'noopener';
             }
+           
         }
     </script>
 
